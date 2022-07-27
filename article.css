@@ -1,1 +1,39 @@
 @import url(style.css);
+
+#main {
+    background-color: var(--background2);
+}
+
+.inline {
+    width: 10%;
+    max-height: 150px;
+    object-fit: contain;
+    margin: 20px;
+}
+
+.inline:hover {
+    width: unset;
+    max-height: unset;
+}
+
+.Headerimg {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.title {
+    font-size: 62px;
+}
+
+p {
+    padding: 10px 20px;
+}
