@@ -1,0 +1,44 @@
+:root {
+    --background1: #0d0621;
+    --background2: #171032;
+    --background3: #1c1943;
+    --background4: #27226b;
+    --foreground1: #434aa6;
+    --foreground2: #7a86c3;
+    --font: #afb8dd;
+    --catborder: #00774c;
+}
+
+body {
+    background: linear-gradient(90deg, var(--background3), var(--background4));
+    height: 100%;
+}
+
+.main {
+    background-color: var(--background1);
+    width: 80%;
+    height: 700px;
+    border: 2px solid var(--background1);
+    border-radius: 3%;
+    margin: 10vh auto;
+}
+
+section p {
+    padding: 0 50px 0 0;
+}
+
+p, h3 {
+    color: var(--font);
+}
+
+.about {
+    display: flex;
+    gap: 15px;
+}
+
+.about img {
+    height: 100px;
+    margin: 10px;
+    border: 3px solid var(--catborder);
+    border-radius: 50%;
+}
