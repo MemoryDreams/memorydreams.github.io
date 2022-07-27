@@ -7,102 +7,41 @@
     --foreground2: #7a86c3;
     --font: #afb8dd;
     --catborder: #00774c;
+    --headerheight: 50px;
 }
 
-*::before, *::after {
+*, ::before, ::after {
     margin: 0;
-    padding: 0;
 }
 
 body {
     background: linear-gradient(90deg, var(--background3), var(--background4));
-    height: 100%;
 }
 
-.main {
-    background-color: var(--background1);
-    width: 80%;
-    border: 0 solid var(--background1);
-    border-radius: 3%;
-    margin: 10vh auto;
-    overflow: hidden;
-}
-
-section p {
-    padding: 0 50px 0 0;
-    font-size: 18px;
-}
-
-section h3 {
-    font-size: 26px;
-    margin-left: 0;
-}
-
-p, h3, a {
-    color: var(--font);
-}
-
-.about {
-    display: flex;
-    gap: 12px;
-}
-
-.about img {
-    height: 200px;
-    margin: 8px;
-    border: 2px solid var(--catborder);
-    border-radius: 50%;
-}
-section {
+#header {
+    position: fixed;
     width: 100%;
+    height: var(--headerheight);
+    background-color: var(--background1);
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 5px 5px var(--background1);
 }
 
-section a {
+#header a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
 
-.link {
-    width: 100%;
-    height: 80px;
-    margin-top: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.link p {
-    font-size: 28px;
-}
-
-.link:hover {
-    background-color: var(--background2);
-}
-
-.links {
-    padding-left: 8px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.icons {
-    display: flex;
-    flex-direction: row;
-    gap: 13px;
-    align-items: flex-end;
-    padding: 16px;
-}
-
-.icons a:hover {
-    background-color: var(--background3);
-    border: 0 solid var(--background3);
+.header {
+    border: 2px solid var(--catborder);
     border-radius: 50%;
-}
-
-.icon {
-    width: 50px;
+    height: 40px;
+    margin: 7px;
 }
 
 img {
@@ -115,7 +54,31 @@ img {
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 
-hr {
-    color: var(--foreground1);
-    width: 100%;
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 15px;
+}
+
+.icons a {
+    padding: 1px;
+}
+
+
+.icons a:hover {
+    background-color: var(--background4);
+    border: 10 solid var(--background4);
+    border-radius: 100%;
+    box-shadow: 0 2px 2px 2px var(--background4);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+#main {
+    margin-top: calc(var(--headerheight) + 10px);
 }
