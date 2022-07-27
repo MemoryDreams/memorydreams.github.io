@@ -9,6 +9,11 @@
     --catborder: #00774c;
 }
 
+*::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: linear-gradient(90deg, var(--background3), var(--background4));
     height: 100%;
@@ -17,28 +22,100 @@ body {
 .main {
     background-color: var(--background1);
     width: 80%;
-    height: 700px;
-    border: 2px solid var(--background1);
+    border: 0 solid var(--background1);
     border-radius: 3%;
     margin: 10vh auto;
+    overflow: hidden;
 }
 
 section p {
     padding: 0 50px 0 0;
+    font-size: 18px;
 }
 
-p, h3 {
+section h3 {
+    font-size: 26px;
+    margin-left: 0;
+}
+
+p, h3, a {
     color: var(--font);
 }
 
 .about {
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
 .about img {
-    height: 100px;
-    margin: 10px;
-    border: 3px solid var(--catborder);
+    height: 200px;
+    margin: 8px;
+    border: 2px solid var(--catborder);
     border-radius: 50%;
+}
+section {
+    width: 100%;
+}
+
+section a {
+    text-decoration: none;
+}
+
+.link {
+    width: 100%;
+    height: 80px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link p {
+    font-size: 28px;
+}
+
+.link:hover {
+    background-color: var(--background2);
+}
+
+.links {
+    padding-left: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    align-items: flex-end;
+    padding: 16px;
+}
+
+.icons a:hover {
+    background-color: var(--background3);
+    border: 0 solid var(--background3);
+    border-radius: 50%;
+}
+
+.icon {
+    width: 50px;
+}
+
+img {
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Chrome                         */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+hr {
+    color: var(--foreground1);
+    width: 100%;
 }
