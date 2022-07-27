@@ -3,6 +3,7 @@
 .main {
     background-color: var(--background1);
     width: 80%;
+    padding: 15px 0 0 0;
     border: 0 solid var(--background1);
     border-radius: 3%;
     margin: 10vh auto;
@@ -17,10 +18,6 @@ section p {
 section h3 {
     font-size: 26px;
     margin-left: 0;
-}
-
-p, h3, a {
-    color: var(--font);
 }
 
 .about {
