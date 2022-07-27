@@ -10,20 +10,6 @@
     justify-content: center;
 }
 
-#intro h3 {
-    font-size: 45px;
-    margin-left: 20px;
-}
-
-#intro p {
-    font-size: 18px;
-    width: 70%;
-}
-
-#intro p, #intro h3 {
-    padding: 10px;
-}
-
 #intro img {
     padding: 15px;
     width: 200px;
