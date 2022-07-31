@@ -39,3 +39,11 @@
     margin-bottom: 10px;
     object-fit: cover;
 }
+
+a {
+    text-decoration: none;
+}
+
+#gallery a:hover {
+    background-color: var(--background3);
+}
