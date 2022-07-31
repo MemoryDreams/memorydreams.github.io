@@ -2,6 +2,7 @@
 
 #intro {
     display: flex;
+    justify-content: space-between;
 }
 
 #intro div {
@@ -19,8 +20,8 @@
 
 #gallery {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
     padding: 20px;
     padding-bottom: 150px;
     gap: 40px;

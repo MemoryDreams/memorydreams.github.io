@@ -1,8 +1,26 @@
 @import url(style.css);
 
-#archive {
+#intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+#intro div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+#intro img {
+    padding: 15px;
+    width: 200px;
+    object-fit: fill;
+    margin-right: 10rem;
+}
+
+#archive {
+    display: flex;
+    flex-direction: column-reverse;
     padding: 10px;
     padding-bottom: 150px;
     gap: 40px;
@@ -34,4 +52,9 @@
 
 .title {
     font-size: 28px;
+}
+
+.date {
+    font-size: x-small;
+    margin: 0;
 }
