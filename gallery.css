@@ -22,6 +22,18 @@
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 150px;
+    gap: 40px;
+    background-color: var(--background2);
+}
+
+#portfolio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 20px;
     padding-bottom: 150px;
     gap: 40px;
