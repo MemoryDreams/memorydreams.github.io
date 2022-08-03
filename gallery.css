@@ -66,3 +66,30 @@ a {
 #gallery a:hover {
     background-color: var(--background3);
 }
+
+@media screen and (max-width: 768px) {
+
+    
+    .item {
+        width: 300px;
+        height: 370px;
+        padding: 10px;
+    }
+
+    .item img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+
+    .item p {
+        font-size: larger;
+    }
+
+    #intro p {
+        font-size: 26px;
+        margin: 10px;
+    }
+    
+}

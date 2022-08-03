@@ -58,3 +58,32 @@
     font-size: x-small;
     margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+
+    #intro p {
+        font-size: 26px;
+        margin: 10px;
+    }
+    
+    .item img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+    }
+    
+    .abstract {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+    
+    .date {
+        font-size: 18px;
+    }
+
+
+
+}

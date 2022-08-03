@@ -20,12 +20,12 @@ section h3 {
     margin-left: 0;
 }
 
-.about {
+#about {
     display: flex;
     gap: 12px;
 }
 
-.about img {
+#about img {
     height: 200px;
     margin: 8px;
     border: 2px solid var(--catborder);
@@ -37,6 +37,10 @@ section {
 
 section a {
     text-decoration: none;
+}
+
+.buttons {
+    padding: 40px 0;
 }
 
 .link {
@@ -67,4 +71,19 @@ section a {
 hr {
     color: var(--foreground1);
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+    section p {
+        font-size: 23px;
+    }
+
+    #about {
+        flex-direction: column;
+        padding: 30px;
+        align-items: center;
+    }
+
+
 }

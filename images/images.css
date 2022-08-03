@@ -40,10 +40,12 @@
 }
 
 #image img {
-    height: 80vh;
+    max-height: 80vh;
+    min-width: 60vw;
     max-width: 80vw;
     border: 10px solid var(--background3);
     background-color: var(--background2);
+    object-fit: contain;
 }
 
 #description {
@@ -66,4 +68,25 @@
 
 #description a:hover {
     color: var(--foreground2);
+}
+
+@media screen and (max-width: 768px) {
+
+    #image img {
+        max-width: 60vw;
+    }
+
+    #description p {
+        width: 80vw;
+        font-size: 28px;
+        text-align: justify;
+    }
+
+    #title {
+        position: relative;
+        align-self: center;
+        font-size: 60px;
+        max-width: 80vw;
+    }
+    
 }
