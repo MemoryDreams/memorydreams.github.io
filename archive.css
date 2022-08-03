@@ -87,3 +87,29 @@
 
 
 }
+
+@media screen and (max-width: 554px) {
+
+    
+    .item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .item {
+        max-height: 300px;
+    }
+    
+    .abstract {
+        font-size: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+    
+    .date {
+        font-size: 8px;
+    }
+}

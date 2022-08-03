@@ -90,3 +90,22 @@
     }
     
 }
+
+@media screen and (max-width: 554px) {
+
+    #image img {
+        max-width: 40vw;
+    }
+
+    #image a {
+        font-size: 8px;
+    }
+
+    #title {
+        position: relative;
+        align-self: center;
+        font-size: 40px;
+        max-width: 80vw;
+    }
+
+}

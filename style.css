@@ -26,6 +26,7 @@ body {
 #header {
     position: fixed;
     width: 100%;
+    max-width: 100vw;
     height: var(--headerheight);
     background-color: var(--background1);
     left: 0;

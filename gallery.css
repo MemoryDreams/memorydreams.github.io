@@ -93,3 +93,16 @@ a {
     }
     
 }
+
+@media screen and (max-width: 554px) {
+
+    #intro img {
+        width: 100px;
+        object-fit: fill;
+    }
+
+    #intro p {
+        font-size: 17px;
+        width: 50vw;
+    }
+}
