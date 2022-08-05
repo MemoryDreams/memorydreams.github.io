@@ -63,7 +63,7 @@ a {
     text-decoration: none;
 }
 
-#gallery a:hover {
+.item:hover {
     background-color: var(--background3);
 }
 
