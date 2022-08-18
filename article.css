@@ -2,22 +2,21 @@
 
 #main {
     background-color: var(--background2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inline {
-    width: 10%;
-    max-height: 150px;
+    width: 60%;
+    max-height: 350px;
     object-fit: contain;
     margin: 20px;
 }
 
-.inline:hover {
-    width: unset;
-    max-height: unset;
-}
-
 .Headerimg {
-    width: 50%;
+    width: 60%;
     padding: 15px;
     margin: auto;
 }
@@ -34,6 +33,8 @@
     font-size: 62px;
 }
 
-p {
+.article {
     padding: 10px 20px;
+    max-width: 60%;
+    font-size: 24px;
 }
