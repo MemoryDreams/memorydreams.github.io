@@ -1,114 +1,95 @@
-@import url(style.css);
+@import url(styles.css);
 
-.main {
-    background-color: var(--background1);
-    width: 80%;
-    padding: 15px 0 0 0;
-    border: 0 solid var(--background1);
-    border-radius: 3%;
-    margin: 10vh auto;
-    overflow: hidden;
-}
 
-section p {
-    padding: 0 50px 0 0;
-    font-size: 18px;
-}
 
-section h3 {
-    font-size: 26px;
-    margin-left: 0;
-}
 
-#about {
+#top {
     display: flex;
-    gap: 12px;
+    flex-direction: row;
+    gap:20px;
+    max-width:95%;
 }
 
-#about img {
-    height: 200px;
-    margin: 8px;
-    border: 2px solid var(--catborder);
-    border-radius: 50%;
-}
-section {
-    width: 100%;
+#portrait {
+    border-radius: 15px;
+    background-color: var(--background1);
 }
 
-section a {
+#portrait img {
+    max-width: 150px;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p {
+    font-size: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.button {
+    width: 45%;
+    height: 80px;
+    background-color: var(--background3);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+a:hover {
+    background-color: var(--foreground2);
+}
+
+a {
+    font-size: 18px;
+    font-weight: 900;
     text-decoration: none;
 }
 
-#buttons {
-    padding: 40px 0;
-}
-
-.link {
-    width: 100%;
-    height: 80px;
-    margin-top: 16px;
+#background {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-}
-
-.link:hover {
-    background-color: var(--background2);
-}
-
-.links {
-    padding-left: 8px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-hr {
-    color: var(--foreground1);
+    height: 100%;
     width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-
-    section p {
-        font-size: 23px;
-    }
-
-    #about {
-        flex-direction: column;
-        padding: 30px;
-        align-items: center;
+@media screen and (max-width: 500px) {
+    #setilite {
+        width: 32px;
+        height: 32px;
+        margin-right: -32px;
     }
 }
 
-@media screen and (max-width: 554px) {
-
-    section p {
-        font-size: 15px;
+@media screen and (min-width: 1500px) {
+    #spaceship {
+        width: 500px;
     }
 
-    p, a, h3 {
-        max-width: 80vw;
+    #welcome {
+        height: 200px;
     }
 
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .main {
-        width: 95%;
-        margin: 3vh auto;
-        overflow: hidden;
+    .floor {
+        height: 140px;
     }
 
-    .link {
-        font-size: 23px;
-        text-align: center;
+    #searchbar {
+        height: 80px;
     }
-    
 }

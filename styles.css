@@ -1,0 +1,129 @@
+:root {
+    --logowidth: 50px;
+    --background1:rgb(5, 5, 10);
+    --backgroundspecial: rgb(32,30,36);
+    --background2:rgb(27, 15, 10);
+    --background3:rgb(49, 48, 58);
+    --background4:rgb(79, 78, 92);
+    --foreground1:rgb(103, 103, 119);
+    --foreground2:rgb(116, 115, 129);
+    --header: 50px;
+    --font: #bfc8ed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--font);
+    font-family: monospace;
+}
+
+img {
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Chrome                         */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+    pointer-events: none;
+}
+
+#wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(90deg, var(--background1), var(--background2));
+}
+
+#mainpart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#spaceship {
+    position: fixed;
+    background-color: var(--backgroundspecial);
+    z-index: 5;
+    width: 40%;
+    border-radius: 20px;
+    border-right: 1px solid var(--foreground2);
+    border-bottom: 1px solid var(--foreground2);
+    padding: 15px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+}
+
+.sky {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star1 {
+    background-image: url(pics/stars/starsky-1.gif);
+    animation: slide 3s linear infinite;
+    z-index: 0;
+}
+
+.star2 {
+    background-image: url(pics/stars/starsky-2.gif);
+    animation: slide 4s linear infinite;
+    z-index: -1;
+}
+
+.star3 {
+    background-image: url(pics/stars/starsky-3.gif);
+    animation: slide 5s linear infinite;
+    z-index: -2;
+}
+
+.star4 {
+    background-image: url(pics/stars/starsky-4.gif);
+    animation: slide 6s linear infinite;
+    z-index: -3;
+}
+
+#char { 
+    /*background-image: url(images/char_fly.gif);*/
+    background-size: 100% auto;
+    border: none;
+    position:absolute;
+    animation: char-flying 60s linear infinite alternate;
+    z-index: 1;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+@keyframes char-flying {
+    from {
+      transform: translateY(20vh) translateX(-50vw) rotateZ(360deg);
+    }
+  
+    to {
+      transform: translateY(80vh) translateX(150vw) rotateZ(0deg);
+    }
+  }
+
+@keyframes slide {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-128px); /* The image width */
+    }
+  }
+

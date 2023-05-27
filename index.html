@@ -4,48 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Page</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="icon" type="image/x-icon" href="pics/favicon.png">
-    <title>Hub area</title>
+    <link rel="icon" href="pics/Icons/favicon.png">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="main">
-        <section id="about">
-            <img src="pics/catwizard.png">
-            <div>
-                <h3>Welcome to my personal page!</h3>
-                <p>
-                    My name is Vincent and I do pixel art, write articles and make webpages. You may find my portfolio on lower part of this page. You can also find my contacts below it.<br>
-                    One of my passions is videogames. I like playing them, analyzing them and hopefully I'll start making them soon!<br>
-                    Some of my favorite games include Legacy of Kain series, Devil May Cry 3, Dark Souls, Dragons Dogma, Silent Hill series, Metal Gear series and original MediEvil duology.<br>
-                    I also like music. I play guitar, keyboard and a kalimba, though I'm far from being good at it. I consider myself to be a music enjoyer. Here's what I mean by it: I like breathtaking, beautiful music. Among my favorite musicians are Ludovico Einaudi, The Doors, Crumb and KGLW. I also hate earworms and take it rather serious to avoid them.<br>
-                    Make yourself at home!
-                </p>
+    <div id="wrapper">    
+        <div id="background">
+            <img src="pics/char_fly.gif" id="char">
+            <div class="sky star1"></div>
+            <div class="sky star2"></div>
+            <div class="sky star3"></div>
+            <div class="sky star4"></div>
+        </div>
+        <div id="mainpart">
+            <div id="spaceship">
+                <div id="top">
+                    <div id="portrait">
+                        <img src="pics/Pixel Art/catwizard.png" alt="This is my avatar">
+                    </div>
+                    <div id="welcome">
+                        <p>
+                            This is my personal page. You can find my CV, portfolio and other things by clicking dedicated buttons.
+                        </p>
+                        <p>If you came here by accident, feel free to look around.</p>
+                    </div>
+                </div>
+                <div id="bottom">
+                    <a class="button" href="Pages/CV.html">Curriculum Vitae</a>
+                    <a class="button">Gamedev Portfolio</a>
+                    <a class="button">Pixel Art Gallery</a>
+                    <a class="button">Articles Archive</a>
+                    <a class="button">Webpages I made</a>
+                    <a class="button" href="Pages/Contacts.html"><img src="pics/Icons/universe.png">Contacts</a>
+                </div>
             </div>
-        </section>
-        <section id="buttons">
-            <section>
-                <a class="link" href="gallery.html">Click here to go to my art Gallery</a>
-            </section>
-            <section>
-                <a class="link" href="archive.html">Click here to enter article Archive</a>
-            </section>
-            <section>
-                <a class="link" href="portfolio.html">Click here to check webpages I made</a>
-            </section>
-        </section>
-        <hr>
-        <section class="links">
-            <h3>You may find me in followind social media:</h3>
-            <div class="icons">
-                <a href="https://discord.gg/mHVpaZVh">
-                    <img class="icon" src="pics/Discord-icon.png">
-                </a>
-                <a href="https://github.com/MemoryDreams">
-                    <img class="icon" src="pics/Github-icon.png">
-                </a>
-            </div>
-        </section>
+        </div>
     </div>
 </body>
 </html>

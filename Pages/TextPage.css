@@ -1,0 +1,31 @@
+@import url(../styles.css);
+
+#return {
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+}
+
+#return:hover {
+    background-color: var(--foreground2);
+}
+
+#header {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header p {
+    font-size: large;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#spaceship {
+    height:80%;
+}
