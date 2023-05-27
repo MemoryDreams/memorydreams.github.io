@@ -13,6 +13,8 @@
 #portrait {
     border-radius: 15px;
     background-color: var(--background1);
+    height:150px;
+    width:150px;
 }
 
 #portrait img {

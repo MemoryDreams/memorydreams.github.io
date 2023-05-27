@@ -26,6 +26,14 @@ p {
     font-family: 'Times New Roman', Times, serif;
 }
 
+#body {
+    background-color: var(--background1);
+    border-radius: 10px;
+    height:100%;
+    padding:15px;
+    overflow-y: auto;
+}
+
 #spaceship {
     height:80%;
 }
