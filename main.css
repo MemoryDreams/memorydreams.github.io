@@ -49,6 +49,7 @@ p {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    text-align: center;
 }
 
 a:hover {
@@ -70,11 +71,78 @@ a {
     width: 100%;
 }
 
+
+
 @media screen and (max-width: 500px) {
     #setilite {
         width: 32px;
         height: 32px;
         margin-right: -32px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .button {
+        height: 140px;
+        width: 140px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    
+
+    .button {
+        height: 80px;
+        width: 80px;
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    p {
+        font-size:  12px;
+    }
+
+    .button {
+        height: 90px;
+        width: 90px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    #portrait {
+        height:100px;
+        width:120px;
+    }
+    
+    #portrait img {
+        max-width: 100px;
+    }
+}
+
+
+
+@media screen and (min-height:700px){
+    #setilite {
+        width: 32px;
+        height: 32px;
+        margin-right: -32px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .button {
+        height: 140px;
+        width: 140px;
+        padding: 10px;
+        font-size:18px;
     }
 }
 
