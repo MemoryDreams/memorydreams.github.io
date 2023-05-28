@@ -7,7 +7,7 @@
     <title>Gamedev Portfolio</title>
     <link rel="stylesheet" type="text/css" href="TextPage.css">
     <link rel="icon" href="../pics/Icons/favicon.png">
-    <script src="script.js"></script>
+    <script src="Gallery.js"></script>
 </head>
 <body>
     <div id="wrapper">    
@@ -20,11 +20,58 @@
         </div>
         <div id="mainpart">
             <div id="spaceship">
-                <div id="header"><a id="return" href="../index.html"><img src="../pics/Icons/Backarrow.png"></a><p>Gamedev Portfolio</p></div>
+                <div id="header">
+                    <a id="return" href="../index.html">
+                        <img src="../pics/Icons/Backarrow.png">
+                    </a>
+                    <button id="goback" onclick="backToPortfolio()" class="hide">
+                        <img src="../pics/Icons/Backarrow.png">
+                    </button>
+                    <p>Gamedev Portfolio</p>
+                </div>
                 <div id="body">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo error aliquam quis officiis autem laborum at sint, molestiae harum reprehenderit inventore eaque eligendi voluptatibus consequatur incidunt suscipit porro vitae.
-                    </p>
+                    <div id="fullPage" class="hide">
+                        <div id="fullHeader">
+                            <button id="descbutt" onclick="showTab(0)" class="active">Description</button>
+                            <button id="commentbutt" onclick="showTab(1)"class="inactive">Comments</button>
+                            <button id="screenbutt" onclick="showTab(2)"class="inactive">Screenshots</button>
+                            <button id="downbutt" onclick="showTab(3)"class="inactive">Download</button>
+                        </div>
+                        <div id="desc" class="hide">
+                            <p id="title"></p>
+                            <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
+                            <p id="desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laboriosam expedita facilis perferendis consectetur, cumque quis animi, distinctio deserunt soluta possimus ipsam aperiam exercitationem nobis maiores in asperiores. Dolorem, quaerat.
+                            </p>
+                        </div>
+                        <div id="comment" class="hide">
+                            <p id="commenttext">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus blanditiis dolorum impedit id velit sequi nihil, eius autem magni dolore soluta tempore sunt? Eum odio dicta delectus expedita dolorum.
+                            </p>
+                        </div>
+                        <div id="screenshots">
+                            <div id="MicroVania">
+                                <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
+                            </div>
+                        </div>
+                        <div id="download"  class="hide">
+                            <p id="downtext"></p>
+                        </div>
+                    </div>
+                    <div id="Gallery">
+                        <div class="tile flexandcenter">
+                            <p class="title">MicroVania</p>
+                            <div class="tilebody">
+                                <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
+                                <div class="tabs">
+                                    <button onclick="hideProjects(MicroVania,0)">Description</button>
+                                    <button onclick="hideProjects(MicroVania,1)">Comments</button>
+                                    <button onclick="hideProjects(MicroVania,2)">Screenshots</button>
+                                    <button onclick="hideProjects(MicroVania,3)">Download</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

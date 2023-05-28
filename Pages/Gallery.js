@@ -45,6 +45,16 @@ class Image {
     }
 }
 
+class Project {
+    constructor(title, description, comment, download) {
+        this.title = title;
+        this.description = description;
+        this.comment = comment;
+        this.download = download;
+    }
+}
+
+//Pixel Art gallery setup
 const WitchInDark = new Image("Witch in Dark", "This was one of the very fisrt arts I made. I still kind of like it. I think it looks cool. Should probably remake it later...Nothing much to say about it.","xx.xx.2018","../pics/Pixel Art/witch-in-dark.png");
 const GBWitch = new Image("Gameboy Witch", "Another attempt at a 1-bit pixel art. It's very simple, but that was the point.","xx.xx.2018","../pics/Pixel Art/gameboy-witch.png");
 const GothLady = new Image("Strange Boutique", "Hard to tell, but it's actually a pixelart. I would know since I was the one to put every pixel with love and care it deserves. One could call this image an accident. One day I saw a girl who looked like that. I thought she was so cute that I immediately thought of drawing her. On the back of her jacket was written something like \"*something* Boutique\", which reminded me of a band I used to listen back then. A few days later, the art is finished.","xx.09.2019","../pics/Pixel Art/goth-chick.png");
@@ -71,5 +81,89 @@ const YuiCrosswalk = new Image("Yui Crosswalk", "It is my take on Yui standing o
 const YuiFreakout = new Image("Yui Freak out", "Initially, I didn't plan to draw this one. Before rewatching the first episode, I only remembered a couple of funny moments. My initial plan was to make one picture per episode. But after rewatching just one episode, I realized, there were just too many funny moments I wanted to redraw. <br>I think I'll make a couple more in the future.","23.04.2023","../pics/Pixel Art/k-on episode 1 (at school).gif");
 const NightRemake = new Image("Night Remake", "Among artist, it is a popular practice, to redraw your old art, to see how much you've grown up. It is my first attempt to do something like that. And I must say, I love the results. This one looks much better, than the previous one.","07.05.2023","../pics/Pixel Art/WitchInNight(OriginalSize).png");
 const MockUpBit = new Image("Game mockup", "This was the first thing I made for my game. The character you see here was used as an enemy. I've decided to make the player wear wizard hat. Wizard hats look cool and are easy to animate.","xx.02.2023","../pics/Pixel Art/MockUp.png");
+
+//Projects setup
+const MicroVania = new Project("MicroVania","This is the description.","This is a comment.","And this is whatever I put in the downloads page.")
+
+
+activeTitle="";
+
+function hideProjects(title,tab){
+    let x, i;
+    x = document.getElementsByClassName('tile');
+    for (i = 0; i < x.length; i++) {
+        hideTile(x[i]);
+    }
+    document.getElementById("goback").className="";
+    document.getElementById("return").className="hide";
+    document.getElementById("fullPage").className="";
+    document.getElementById("desctext").innerHTML=title.description;
+    document.getElementById("title").innerHTML=title.title;
+    document.getElementById("commenttext").innerHTML=title.comment;
+    document.getElementById("downtext").innerHTML=title.download;
+    document.getElementById(title.title).className=""
+    showTab(tab);
+    activeTitle=title.title;
+}
+
+function backToPortfolio(){
+    document.getElementById(activeTitle).className="hide"
+    
+    let x, i;
+    x = document.getElementsByClassName('tile');
+    for (i = 0; i < x.length; i++) {
+        showTile(x[i]);
+    }
+    document.getElementById("fullPage").className="hide";
+    document.getElementById("goback").className="hide";
+    document.getElementById("return").className="";
+}
+
+function showTab(num){
+    hideTabs()
+    switch(num){
+        case 0:
+            document.getElementById("descbutt").className="active";
+            document.getElementById("desc").className="";
+            break;
+        case 1:
+            document.getElementById("commentbutt").className="active";
+            document.getElementById("comment").className="";
+            break;
+        case 2:
+            document.getElementById("screenbutt").className="active";
+            document.getElementById("screenshots").className="";
+            break;
+        case 3:
+            document.getElementById("downbutt").className="active";
+            document.getElementById("download").className="";
+            break;
+    }
+}
+
+function hideTabs(){
+    document.getElementById("descbutt").className="inactive";
+    document.getElementById("commentbutt").className="inactive";
+    document.getElementById("screenbutt").className="inactive";
+    document.getElementById("downbutt").className="inactive";
+
+    document.getElementById("desc").className="hide";
+    document.getElementById("comment").className="hide";
+    document.getElementById("screenshots").className="hide";
+    document.getElementById("download").className="hide";
+}
+
+function hideTile(obj){
+    obj.className = obj.className.replace("tile flexandcenter", "tile hide");
+}
+
+function showTile(obj){
+    obj.className = obj.className.replace("tile hide", "tile flexandcenter");
+}
+
+
+
+
+
 
 
