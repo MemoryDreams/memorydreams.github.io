@@ -46,11 +46,8 @@ class Image {
 }
 
 class Project {
-    constructor(title, description, comment, download) {
+    constructor(title) {
         this.title = title;
-        this.description = description;
-        this.comment = comment;
-        this.download = download;
     }
 }
 
@@ -70,7 +67,7 @@ const Mouse = new Image("Mouse", "It's a redraw in an unfamiliar style. Nothing 
 const OutMouse = new Image("Mouse outside", "It's a redraw in an unfamiliar style. Nothing special about it, I think I could do better. <br>There's a different background here. Also it's probably the last time I used a watermark as I gave up on the idea of being popular artist.","xx.05.2021","../pics/Pixel Art/mouseoutside.png");
 const Slime = new Image("Slime", "I was thinking of those old slime toys and thought how cool would it be if it was alive. This one tastes like pappermint, hense the name.","xx.08.2021","../pics/Pixel Art/slime.png");
 const ExampleCat = new Image("Example cat", "This cartoonish cat was made in about 5 minutes, as an example for my puple. In the end I liked it so much I decided to upload it here. Also, from this point, all of my works will be uploaded in their initial size!","21.07.2022","../pics/Pixel Art/ExampleCat.png");
-const Polly = new Image("Polly", "It's the lead singer from Skating Polly. I really like how she looks in Hail Mary video. Also I spent most of the day on her face and by the time I got to everything else, I completely burned out. The original plan was to make a full scene with couch and legs, but it didn't work out. I was thinking of croping everything but the head but ultimately managed to finish some parts with mid quality. Oh well!","02.08.2022","../pics/Pixel Art/Polly.png");
+//const Polly = new Image("Polly", "It's the lead singer from Skating Polly. I really like how she looks in Hail Mary video. Also I spent most of the day on her face and by the time I got to everything else, I completely burned out. The original plan was to make a full scene with couch and legs, but it didn't work out. I was thinking of croping everything but the head but ultimately managed to finish some parts with mid quality. Oh well!","02.08.2022","../pics/Pixel Art/Polly.png");
 const Mountainview = new Image("Mountainview", "While doing The Odin Project task, I decided that I need a nice background picture and instead of searching for one, I simply made one.","13.09.2022","../pics/Pixel Art/Mountainview.png");
 const Onyx = new Image("Onyx", "It is a logo for Space Station 13 server called Chaotic Onyx. I wanted to make a cool and modern logo, but in pixel art. And I like the result, even though it was unused.","17.10.2022","../pics/Pixel Art/Onyxlogo.png");
 const Snail = new Image("Chaotic Snail", "It's a snail on fire. It had too many tasks, so it burned out.","19.10.2022","../pics/Pixel Art/OnyxSnail.gif");
@@ -83,7 +80,9 @@ const NightRemake = new Image("Night Remake", "Among artist, it is a popular pra
 const MockUpBit = new Image("Game mockup", "This was the first thing I made for my game. The character you see here was used as an enemy. I've decided to make the player wear wizard hat. Wizard hats look cool and are easy to animate.","xx.02.2023","../pics/Pixel Art/MockUp.png");
 
 //Projects setup
-const MicroVania = new Project("MicroVania","This is the description.","This is a comment.","And this is whatever I put in the downloads page.")
+//const Example = new Project("Example","Description.","Comment.","Downloads.")
+
+const MicroVania = new Project("MicroVania")
 
 
 activeTitle="";
@@ -97,17 +96,19 @@ function hideProjects(title,tab){
     document.getElementById("goback").className="";
     document.getElementById("return").className="hide";
     document.getElementById("fullPage").className="";
-    document.getElementById("desctext").innerHTML=title.description;
-    document.getElementById("title").innerHTML=title.title;
-    document.getElementById("commenttext").innerHTML=title.comment;
-    document.getElementById("downtext").innerHTML=title.download;
-    document.getElementById(title.title).className=""
+    document.getElementById(title.title+"desc").className=""
+    document.getElementById(title.title+"pics").className="flexandcenter"
+    document.getElementById(title.title+"comment").className="flexandcenter"
+    document.getElementById(title.title+"Down").className=""
     showTab(tab);
     activeTitle=title.title;
 }
 
 function backToPortfolio(){
-    document.getElementById(activeTitle).className="hide"
+    document.getElementById(activeTitle+"desc").className="hide"
+    document.getElementById(activeTitle+"pics").className="hide"
+    document.getElementById(activeTitle+"comment").className="hide"
+    document.getElementById(activeTitle+"Down").className="hide"
     
     let x, i;
     x = document.getElementsByClassName('tile');

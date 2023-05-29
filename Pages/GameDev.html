@@ -32,30 +32,97 @@
                 <div id="body">
                     <div id="fullPage" class="hide">
                         <div id="fullHeader">
-                            <button id="descbutt" onclick="showTab(0)" class="active">Description</button>
-                            <button id="commentbutt" onclick="showTab(1)"class="inactive">Comments</button>
+                            <button id="descbutt" onclick="showTab(0)" class="inactive">Description</button>
+                            <button id="commentbutt" onclick="showTab(1)"class="inactive">Post-Mortem</button>
                             <button id="screenbutt" onclick="showTab(2)"class="inactive">Screenshots</button>
-                            <button id="downbutt" onclick="showTab(3)"class="inactive">Download</button>
+                            <button id="downbutt" onclick="showTab(3)"class="inactive">Links</button>
                         </div>
                         <div id="desc" class="hide">
-                            <p id="title"></p>
-                            <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
-                            <p id="desctext">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laboriosam expedita facilis perferendis consectetur, cumque quis animi, distinctio deserunt soluta possimus ipsam aperiam exercitationem nobis maiores in asperiores. Dolorem, quaerat.
-                            </p>
+                            <div  id="MicroVaniadesc">
+                                <p>MicroVania</p>
+                                <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
+                                <p>
+                                    MicroVania is a short metroidvania game, made in simplistic 1-bit style. Most sprites are 16x16 pixels. The main mechanics of the game are moving and shooting. Movement in the game consists of running, jumping and wallsliding. You can also jump on enemies to deal damage. <br>
+                                    <br>You shoot with the mouse. The game uses projectile-based shooting. Some enemies can shoot at the player as well. If that happens, you can either dodge the bullets or shoot them down. <br> 
+                                    <br>The game features 3 rooms and 5 types of enemies. Some enemies will be patrolling the area and will only attack you, if they see you. And if you get away, they'll go back to patrolling the area. <br> 
+                                    <br>What makes this game stand apart from all others is its unique 1-bit color palette. Each screen will consist of only 2 colors. Different rooms will have different combinations to enhance the mood of the game. <br>
+                                    <br>Microvania is hugely inspired by oldschool Metroid games and early 20th century blues.
+                                </p>
+                            </div>
                         </div>
                         <div id="comment" class="hide">
-                            <p id="commenttext">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus blanditiis dolorum impedit id velit sequi nihil, eius autem magni dolore soluta tempore sunt? Eum odio dicta delectus expedita dolorum.
-                            </p>
+                            <div  id="MicroVaniacomment">
+                                 
+
+                                <p>
+                                    Before I start, keep in mind, that it was my first *real* game. If you are a veteran developer, there might be parts where you cringe. I know I do now that I am more experienced. 
+                                </p>
+                                <img src="../pics/Pixel Art/MockUp.png">
+                                <p>
+                                    This game started with it's art style. The first thing I did, when deciding to make a game, was a pixel mockup. It featured a room, tile set, a character and some furniture. Most of it transitioned into the game. Though I didn't use those exact colors and the character was better suited to be an enemy. 
+                                </p>
+                                <img src="../pics/Pixel Art/1BitPlayerAnimationShowcase(rev1).gif">
+                                 
+
+                                <p>
+                                    After I setup the basic movement script, the first thing I did, was the animations. I used a static image for testing. It took me a couple of hours before I was satisfied with the results. The character could run, jump and wallslide. And he had two animations for jumping, one for moving up and the other for moving down. <br>
+                                    <br>The hardest thing though, was to manage making walking seem smooth. It was hard for two reasons: 1-bit color palette and 16x16 pixel canvas. But in the end, I nailed it. 
+                                </p>
+                                <p>
+                                    With testing room finished, it was time to make the first enemy: the spikes. This was very straightforward at first. I made the vitality script and attached it to the player. Upon the first overlap of collisions, health in vitality script is reduced by 60 (with the total of 100). Immediately after it, I made the first real enemy: the zombie. It chased the player and jumped if the player is at least one block higher. This worked, but there was one tiny problem. <br>
+                                    <br>The zombie entered the player's collision and spined there on spot. They only dealt damage upon entering. I thought of two solutions to this problem: keep dealing damage and adding knockback. I decided to implement both of them. <br>
+                                    <br>To keep the enemy dealing damage, I added invincibility frames to vitality script. Every enemy in the game had the same vitality script. The values, like total health and invincibility frames, were different for everyone. It took me almost no time. Making knockback was much harder. <br>
+                                    <br>The problem with knockback was that it refused to work, no matter what I did. I tried to copy some other knockback script, but I didn't work either. A couple of hours in, I realized that my movement script overrides the knockback effect. So I used the simplest solution: when knockback is in effect, movement script doesn't work. <br>
+                                    <br>The knockback angle is determined by the positions of receiver and dealer of damage. The power is determined by damage. Zombies deal 10 damage at that point, and it is enough to knock you back a couple of blocks. The spikes on the other hand, send you flying to the stratosphere. It was so fun, I decided to not fix it. Especially as enemies can die from spikes as well. <br>
+                                    <br>
+                                </p>
+                                <p>
+                                    Zombies die in one hit. You can break spikes, but they have lots of HP. As zombies are disposable enemies, I decided it's a good idea to make them spawn. So I made a gravestone object, that will spawn more and more zombies until it is broken. <br>
+                                    <br>The problem with gravestone was that they started working as soon as the level starts. And by the time you reach the distant ones, they will be surrounded by armies of undead corpses. I fixed it by enabling the gravestones only if the player is nearby. <br>
+                                    <br>At this point I decided that it would be fun to give the player an ability to damage the enemies by jumping on them. I managed it by checking the velocity of the player upon entering the enemy's collision. If the y velocity is less than 0, it means that the player is falling. And thus he will receive no damage, but will get knockback. <br>
+                                    <br>I realized that the more options the player has, the more fun he will be having in the game. <br>
+                                    <br>It worked great. Jumping on enemies was really fun. It was even more fun if you manage to die, being above a zombie. Zombies will never stop chasing the player. Even if the player's health is below zero, they will throw his corpse around, dying upon every throw. 
+                                </p>
+                                <p>
+                                    With that I had everything I needed to make the first level. At this point, I've been working on this game for at least a month. Making the first level was challenging, despite being simple from technical side. How long should a level be, before the player gets bored? How to show the basic mechanics, without telling the player what to do? Is walking from one point on the map to another fun? <br>
+                                    <br>The first level is divided in several small segments, separated by stone walls. The player can easily jump over. The first segment introduces the first gravestone. On the beginning of the second segment, a gravestone is places right bellow the wall. The idea was that the player had a high chance of jumping on enemy and discovering that you can damage them that way. <br>
+                                    <br>Next segment had several gravestones and spikes nearby. In it, the player could discover the enemies may also die from spikes. <br>
+                                    <br>The rest of segments are more of challenges than tutorials. After some playtesting, with my friends as players, it turned out that not everything I wanted to communicate, was communicated. Also the game was really hard!                                    
+                                </p>
+                                <p>
+                                    After I finished with making the first level easier, it was time to make another one. The second level needed a new enemy type. As player's primary attack is shooting, it only made sense to make enemies that shoot at the player. I decided to start with a turret. <br>
+                                    <br>I already had a gun in the player's object, so I reused it. The hard part was to figure out, how to make the turret turn to player. To make things seem more fair to the player, I made it slower to turn. The bullets in the game are fast, but slow enough to dodge them, given the practice. To makes things a tiny bit harder, I made the shooting rate faster. <br>
+                                    <br>The next enemy was a combination of the previous two. In the initial concept, the gunman was supposed to partol the area until he sees the player. When in combat state, it should shoot at the player while avoiding bullets. <br>
+                                    <br>Fighting was already working. To make him partol, I made him walk to the end of the platform, wait a little and walk to another end. It was tricky to figure out how to make him detect the platform edge and walls in front of him. But I managed. <br>
+                                    <br>To make him see the player, I used raytracing. I know that raytracing is expensive, so it only works if the player is already nearby. Also it is not triggered on every frame. The game hardly suffers if the enemy is blind 4 out of 5 frames. But in return it reduces the effect on performance significatly. <br>
+                                    <br>I also added health refill items, that are dropping from enemies. The player health determines the drop rate. If health is full, they won't drop. The less health the player has, the higher the chance the drop will occur. 
+                                </p>
+                                <p>
+                                    The second level was huge compared to the first one. It had several ways you could finish it. I'm really proud of it. Though you can still beat it in a couple of minutes. 
+                                </p>
+                                <p>
+                                    The next playtest showed, that bullets were too fast, the firerate was too friquent and there were too many enemies. Also, enemies could shoot through walls. It happened because bullets only checked if they entered the collision with walls. But if they were spawned inside walls, they could damage the player on the other side. To fix it, I once again used raytracing. Not enemies can't shoot at all if they don't see the player directly. <br>
+                                    <br>I reduced the enemy count, reworked shooting a bit and added deagro conditions for walking enemies. If they can't see the player for a couple of second, they give up and start patrolling the area again. It made game much easier. 
+                                </p>
+                                <p>
+                                    It was time to make another enemy. Now it will attack on close range. It has 2 types of attack. If the player is on the same level, he will use thrust attack, and if the player is higher, it will swing its blade. The hardest part about this enemy was to determine an appropriate distance at which he would attack the player. But in the end, I nailed it. <br>
+                                    <br>I made another room, filled with this enemy type. There were several platoforms above spikes. The player could either shoot them from distance, or lure them to spikes. 
+                                </p>
+                                <p>
+                                    At this point I was going to make the first boss. But after several months of intense solo work, I was feeling a bit burned out from this project. 
+                                </p>
+                            </div>
                         </div>
                         <div id="screenshots">
-                            <div id="MicroVania">
+                            <div id="MicroVaniapics">
                                 <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
+                                <img src="../pics/Pixel Art/1BitPlayerAnimationShowcase(rev1).gif">
                             </div>
                         </div>
                         <div id="download"  class="hide">
-                            <p id="downtext"></p>
+                            <div id="MicroVaniaDown">
+                                <p id="downtext"></p>
+                            </div>
                         </div>
                     </div>
                     <div id="Gallery">
@@ -65,9 +132,9 @@
                                 <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
                                 <div class="tabs">
                                     <button onclick="hideProjects(MicroVania,0)">Description</button>
-                                    <button onclick="hideProjects(MicroVania,1)">Comments</button>
+                                    <button onclick="hideProjects(MicroVania,1)">Post-Mortem</button>
                                     <button onclick="hideProjects(MicroVania,2)">Screenshots</button>
-                                    <button onclick="hideProjects(MicroVania,3)">Download</button>
+                                    <button onclick="hideProjects(MicroVania,3)">Links</button>
                                 </div>
                             </div>
                         </div>

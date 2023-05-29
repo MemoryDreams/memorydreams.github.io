@@ -199,6 +199,22 @@ p {
     justify-content: center;
 }
 
+#desc, #comment, #screenshots, #download {
+    padding:15px;
+    overflow-y: auto;
+    height:85%;
+    text-align: justify;
+}
+
+#desc img {
+    width:100%;
+}
+
+#fullPage div img {
+    max-width:90%;
+    margin:auto;
+}
+
 @media screen and (max-width: 480px) {
   #spaceship {
       width: 100%;
