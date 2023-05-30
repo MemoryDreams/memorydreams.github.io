@@ -210,13 +210,8 @@ p {
     text-align: justify;
 }
 
-#desc img {
-    width:100%;
-}
-
 #fullPage div img {
-    max-width:90%;
-    margin:auto;
+    height:24em;
 }
 
 @media screen and (max-width: 480px) {

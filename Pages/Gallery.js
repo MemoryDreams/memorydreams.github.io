@@ -82,10 +82,6 @@ const MockUpBit = new Image("Game mockup", "This was the first thing I made for 
 //Projects setup
 //const Example = new Project("Example","Description.","Comment.","Downloads.")
 
-const MicroVania = new Project("MicroVania")
-const RockPaperScissors = new Project("RockPaperScissors")
-const Sketchbook = new Project("Sketchbook")
-
 
 activeTitle="";
 
@@ -98,12 +94,12 @@ function hideProjects(title,tab){
     document.getElementById("goback").className="";
     document.getElementById("return").className="hide";
     document.getElementById("fullPage").className="";
-    document.getElementById(title.title+"desc").className=""
-    document.getElementById(title.title+"pics").className="flexandcenter"
-    document.getElementById(title.title+"comment").className="flexandcenter"
-    document.getElementById(title.title+"Down").className=""
+    document.getElementById(title+"desc").className="flexandcenter"
+    document.getElementById(title+"pics").className="flexandcenter"
+    document.getElementById(title+"comment").className="flexandcenter"
+    document.getElementById(title+"Down").className="flexandcenter"
     showTab(tab);
-    activeTitle=title.title;
+    activeTitle=title;
 }
 
 function backToPortfolio(){
