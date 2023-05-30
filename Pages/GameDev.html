@@ -67,7 +67,8 @@
                                 <p>
                                     After I setup the basic movement script, the first thing I did, was the animations. I used a static image for testing. It took me a couple of hours before I was satisfied with the results. The character could run, jump and wallslide. And he had two animations for jumping, one for moving up and the other for moving down. <br>
                                     <br>The hardest thing though, was to manage making walking seem smooth. It was hard for two reasons: 1-bit color palette and 16x16 pixel canvas. But in the end, I nailed it. 
-                                </p>
+                                </p>                                
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(2).jpg">
                                 <p>
                                     With testing room finished, it was time to make the first enemy: the spikes. This was very straightforward at first. I made the vitality script and attached it to the player. Upon the first overlap of collisions, health in vitality script is reduced by 60 (with the total of 100). Immediately after it, I made the first real enemy: the zombie. It chased the player and jumped if the player is at least one block higher. This worked, but there was one tiny problem. <br>
                                     <br>The zombie entered the player's collision and spined there on spot. They only dealt damage upon entering. I thought of two solutions to this problem: keep dealing damage and adding knockback. I decided to implement both of them. <br>
@@ -83,12 +84,14 @@
                                     <br>I realized that the more options the player has, the more fun he will be having in the game. <br>
                                     <br>It worked great. Jumping on enemies was really fun. It was even more fun if you manage to die, being above a zombie. Zombies will never stop chasing the player. Even if the player's health is below zero, they will throw his corpse around, dying upon every throw. 
                                 </p>
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment.jpg">
                                 <p>
                                     With that I had everything I needed to make the first level. At this point, I've been working on this game for at least a month. Making the first level was challenging, despite being simple from technical side. How long should a level be, before the player gets bored? How to show the basic mechanics, without telling the player what to do? Is walking from one point on the map to another fun? <br>
                                     <br>The first level is divided in several small segments, separated by stone walls. The player can easily jump over. The first segment introduces the first gravestone. On the beginning of the second segment, a gravestone is places right bellow the wall. The idea was that the player had a high chance of jumping on enemy and discovering that you can damage them that way. <br>
                                     <br>Next segment had several gravestones and spikes nearby. In it, the player could discover the enemies may also die from spikes. <br>
                                     <br>The rest of segments are more of challenges than tutorials. After some playtesting, with my friends as players, it turned out that not everything I wanted to communicate, was communicated. Also the game was really hard!                                    
                                 </p>
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(3).jpg">
                                 <p>
                                     After I finished with making the first level easier, it was time to make another one. The second level needed a new enemy type. As player's primary attack is shooting, it only made sense to make enemies that shoot at the player. I decided to start with a turret. <br>
                                     <br>I already had a gun in the player's object, so I reused it. The hard part was to figure out, how to make the turret turn to player. To make things seem more fair to the player, I made it slower to turn. The bullets in the game are fast, but slow enough to dodge them, given the practice. To makes things a tiny bit harder, I made the shooting rate faster. <br>
@@ -97,6 +100,7 @@
                                     <br>To make him see the player, I used raytracing. I know that raytracing is expensive, so it only works if the player is already nearby. Also it is not triggered on every frame. The game hardly suffers if the enemy is blind 4 out of 5 frames. But in return it reduces the effect on performance significatly. <br>
                                     <br>I also added health refill items, that are dropping from enemies. The player health determines the drop rate. If health is full, they won't drop. The less health the player has, the higher the chance the drop will occur. 
                                 </p>
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(4).jpg">
                                 <p>
                                     The second level was huge compared to the first one. It had several ways you could finish it. I'm really proud of it. Though you can still beat it in a couple of minutes. 
                                 </p>
@@ -104,6 +108,7 @@
                                     The next playtest showed, that bullets were too fast, the firerate was too friquent and there were too many enemies. Also, enemies could shoot through walls. It happened because bullets only checked if they entered the collision with walls. But if they were spawned inside walls, they could damage the player on the other side. To fix it, I once again used raytracing. Not enemies can't shoot at all if they don't see the player directly. <br>
                                     <br>I reduced the enemy count, reworked shooting a bit and added deagro conditions for walking enemies. If they can't see the player for a couple of second, they give up and start patrolling the area again. It made game much easier. 
                                 </p>
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(8).jpg">
                                 <p>
                                     It was time to make another enemy. Now it will attack on close range. It has 2 types of attack. If the player is on the same level, he will use thrust attack, and if the player is higher, it will swing its blade. The hardest part about this enemy was to determine an appropriate distance at which he would attack the player. But in the end, I nailed it. <br>
                                     <br>I made another room, filled with this enemy type. There were several platoforms above spikes. The player could either shoot them from distance, or lure them to spikes. 
@@ -115,8 +120,15 @@
                         </div>
                         <div id="screenshots">
                             <div id="MicroVaniapics">
-                                <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
                                 <img src="../pics/Pixel Art/1BitPlayerAnimationShowcase(rev1).gif">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment.jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(2).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(3).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(4).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(5).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(6).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(7).jpg">
+                                <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(8).jpg">
                             </div>
                         </div>
                         <div id="download"  class="hide">
