@@ -83,6 +83,8 @@ const MockUpBit = new Image("Game mockup", "This was the first thing I made for 
 //const Example = new Project("Example","Description.","Comment.","Downloads.")
 
 const MicroVania = new Project("MicroVania")
+const RockPaperScissors = new Project("RockPaperScissors")
+const Sketchbook = new Project("Sketchbook")
 
 
 activeTitle="";

@@ -199,6 +199,10 @@ p {
     justify-content: center;
 }
 
+.tilebody img {
+    max-width: 100%;
+}
+
 #desc, #comment, #screenshots, #download {
     padding:15px;
     overflow-y: auto;

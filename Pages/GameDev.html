@@ -38,7 +38,13 @@
                             <button id="downbutt" onclick="showTab(3)"class="inactive">Links</button>
                         </div>
                         <div id="desc" class="hide">
-                            <div  id="MicroVaniadesc">
+                            <div id="RockPaperScissorsdesc" class="hide">
+                                <img src="../pics/Portfolio Preview/RockPaperScissors.png">
+                                <p>
+                                    <br> A simple Rock Paper Scissors game against AI opponent. 
+                                </p>
+                            </div>
+                            <div  id="MicroVaniadesc" class="hide">
                                 <p>MicroVania</p>
                                 <img src="../pics/Portfolio Preview/BackgroundOfMeny.png">
                                 <p>
@@ -49,9 +55,57 @@
                                     <br>Microvania is hugely inspired by oldschool Metroid games and early 20th century blues.
                                 </p>
                             </div>
+                            <div  id="Sketchbookdesc" class="hide">
+                                <p>Sketchbook</p>
+                                <img src="../pics/Portfolio Preview/Sketchbook.png">
+                                <p>
+                                    What began as a simple exercise for the Odin Project, on DOM manipulation using JavaScript, quickly became a fullfledged drawing app. You will find all the features a basic drawing app needs. 
+                                </p>
+                            </div>
                         </div>
                         <div id="comment" class="hide">
-                            <div  id="MicroVaniacomment">
+                            <div id="RockPaperScissorscomment" class="hide">
+                                <p>
+                                    This was an excersise, suggested by the Odin Project. The JavaScript part of this project was straightforward to do. So this little project mostly shows off my pixel art and design skills. 
+                                </p>
+                            </div>
+                            <div id="Sketchbookcomment" class="hide">
+                                <p>
+                                    The Odin Project task was to make a field with boxes that change color when you touch them with the cursor. The problem was I didn't really know it. I read the title of the exercise and instead of reading hints, tips or even the required tasks, I decided to look at what other students've done, and do something similar or better. <br> 
+                                    <br>The first thing I realized when looking at other works was that they are all very basic. You can't realistically use it for anything, other than showing off to someone who've never done any programming in their life. So the concept of something I can actually use came to me naturally.
+                                </p>
+                                <p>
+                                    The basics, like drawing a canvas and changing the colors of the blocks, wasn't very hard to setup. Drawing only if the mouse button is pressed, was much harder. No wonder almost no other student bothered with it. The solution was to paint the pixel if the button is just pressed AND if the cursor entered the pixel with button already pressed. I also needed to disable the highliting of pixel elements, otherwise the basic functionality of browsers will get in a way of art.  
+                                </p>
+                                <p>
+                                    Other works used some prebuild app to pick color. It looks cool and is very functional, but seeing pretty much everybody using a pre-made solution discouraged me from using it. Instead, I made a palette with pico-8 colors and a textbox to insert custom value. The textbox will accept either hash or RGB value. The algorythm I've written checks which one the user inserted and parses it accordingly. To hint at what this text box is supposed to be in the first place, I made it show the value of the color in use. 
+                                </p>
+                                <p>
+                                    Eraser simply uses the background color. When exporting, this color is used as transparent value. Hopefully, nobody will ever want to use this specific color! More on exporting later. 
+                                </p>
+                                <p>
+                                    It took me quite some time to figure out how to implement bucket tool. It uses a basic filling algorythm, but implementing it, being a beginner programmer, was rather hard. In the end I nailed it. <br>
+                                    <br>I also added the color picker, that lets you pick the color of the pixel you click on. When color is picked, the tool is automatically switched to the pencil. I never thought of it when drawing before, but without the switch, it feels awful. 
+                                </p>
+                                <p>
+                                    Another thing I've seen in other works was the rainbow pencil. What I didn't like in other works, however, is that they simply used RNG for every simple number. The results were awful and looked nothing like a rainbow. Naturally, I decided to make it into a repeating sequence of colors. After some digging, I discovered the rainbow colors that looked nice and used them. The color is switched upon every new pixel colored. 
+                                </p>
+                                <img src="../pics/Portfolio Preview/Sketchbook.png">
+                                <p>
+                                    Why not go further and make the rainbow pencil work with the bucket? It was a brilliant idea. After some tweaking, it produced fascinating results, with unique patterns. The pattern depends the beginning point of the filling algorythm and on the shape of the area. <br>
+                                    <br>I liked the results so much, I used that tool again and again, just to see different patterns it made. At the beginning of every day, it boosted my confidence and mood. 
+                                </p>
+                                <p>
+                                    In terms of drawing, there was just one feature it lacked. You see, when you are moving the cursor too fast, it might phisically never touch some of the inbetween pixels, resulting in gaps. This happaned to pretty much everyone. I haven't seen a single other work that took care of that problem. <br>
+                                    <br>My solution was the following: when the mouse button is pressed, I draw lines between every other pixel. If pixels are near, no additional actions required. But if there's a gap, it will be filled. The coordinates of the last pixel is erased as soon as the mouse button is released. <br>
+                                    <br>To make better use of this feature, I also added the line tool, that works on the same algorythm. It is hidden under the cat button. 
+                                </p>
+                                <p>
+                                    By far the most time I spend, trying to implement the save functionality. To save a file, behind the scenes a canvas is created, and each pixel of that canvas is filled accodring to the drawing field. The resulting image is then posted in the bottom of the page and can be downloaded as a normal image. <br>
+                                    <br>I could add an option of scaling the output, it would be quite easy, but I decided it wouldn't be necessary. 
+                                </p>
+                            </div>
+                            <div  id="MicroVaniacomment" class="hide">
                                  
 
                                 <p>
@@ -79,10 +133,10 @@
                                 </p>
                                 <p>
                                     Zombies die in one hit. You can break spikes, but they have lots of HP. As zombies are disposable enemies, I decided it's a good idea to make them spawn. So I made a gravestone object, that will spawn more and more zombies until it is broken. <br>
-                                    <br>The problem with gravestone was that they started working as soon as the level starts. And by the time you reach the distant ones, they will be surrounded by armies of undead corpses. I fixed it by enabling the gravestones only if the player is nearby. <br>
+                                    <br>The problem with gravestone was that they started working as soon as the level starts. And by the time you reach the distant ones, they will be surrounded by armies of undead coRockPaperScissorses. I fixed it by enabling the gravestones only if the player is nearby. <br>
                                     <br>At this point I decided that it would be fun to give the player an ability to damage the enemies by jumping on them. I managed it by checking the velocity of the player upon entering the enemy's collision. If the y velocity is less than 0, it means that the player is falling. And thus he will receive no damage, but will get knockback. <br>
                                     <br>I realized that the more options the player has, the more fun he will be having in the game. <br>
-                                    <br>It worked great. Jumping on enemies was really fun. It was even more fun if you manage to die, being above a zombie. Zombies will never stop chasing the player. Even if the player's health is below zero, they will throw his corpse around, dying upon every throw. 
+                                    <br>It worked great. Jumping on enemies was really fun. It was even more fun if you manage to die, being above a zombie. Zombies will never stop chasing the player. Even if the player's health is below zero, they will throw his coRockPaperScissorse around, dying upon every throw. 
                                 </p>
                                 <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment.jpg">
                                 <p>
@@ -119,7 +173,13 @@
                             </div>
                         </div>
                         <div id="screenshots">
-                            <div id="MicroVaniapics">
+                            <div id="RockPaperScissorspics" class="hide">
+                                <img src="../pics/Portfolio Preview/RockPaperScissors.png">
+                            </div>
+                            <div id="Sketchbookpics" class="hide">
+                                <img src="../pics/Portfolio Preview/Sketchbook.png">
+                            </div>
+                            <div id="MicroVaniapics" class="hide">
                                 <img src="../pics/Pixel Art/1BitPlayerAnimationShowcase(rev1).gif">
                                 <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment.jpg">
                                 <img src="../pics/Portfolio Preview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(2).jpg">
@@ -132,8 +192,20 @@
                             </div>
                         </div>
                         <div id="download"  class="hide">
-                            <div id="MicroVaniaDown">
-                                <p id="downtext"></p>
+                            <div id="RockPaperScissorsDown" class="hide">
+                                <p>
+                                    Try out the app: <a href="https://memorydreams.github.io/RockPaperScissors/">memorydreams.github.io/RockPaperScissors</a>. <br>
+                                    <br>Source code: <a href="https://github.com/MemoryDreams/RockPaperScissors">github.com/MemoryDreams/RockPaperScissors</a>.
+                                </p>
+                            </div>
+                            <div id="SketchbookDown" class="hide">
+                                <p>
+                                    Try out the app: <a href="https://memorydreams.github.io/sketchbook/">memorydreams.github.io/sketchbook</a>. <br>
+                                    <br>Source code: <a href="https://github.com/MemoryDreams/sketchbook">github.com/MemoryDreams/sketchbook</a>.
+                                </p>
+                            </div>
+                            <div id="MicroVaniaDown" class="hide">
+                                <p>You can download the latest release of the game on <a href="https://memorydreams.itch.io/microvania">itch.io</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -147,6 +219,30 @@
                                     <button onclick="hideProjects(MicroVania,1)">Post-Mortem</button>
                                     <button onclick="hideProjects(MicroVania,2)">Screenshots</button>
                                     <button onclick="hideProjects(MicroVania,3)">Links</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile flexandcenter">
+                            <p class="title">Sketchbook</p>
+                            <div class="tilebody">
+                                <img src="../pics/Portfolio Preview/Sketchbook-preview.png">
+                                <div class="tabs">
+                                    <button onclick="hideProjects(Sketchbook,0)">Description</button>
+                                    <button onclick="hideProjects(Sketchbook,1)">Post-Mortem</button>
+                                    <button onclick="hideProjects(Sketchbook,2)">Screenshots</button>
+                                    <button onclick="hideProjects(Sketchbook,3)">Links</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile flexandcenter">
+                            <p class="title">Rock Paper Scissors</p>
+                            <div class="tilebody">
+                                <img src="../pics/Portfolio Preview/RockPaperScissors-preview.png">
+                                <div class="tabs">
+                                    <button onclick="hideProjects(RockPaperScissors,0)">Description</button>
+                                    <button onclick="hideProjects(RockPaperScissors,1)">Post-Mortem</button>
+                                    <button onclick="hideProjects(RockPaperScissors,2)">Screenshots</button>
+                                    <button onclick="hideProjects(RockPaperScissors,3)">Links</button>
                                 </div>
                             </div>
                         </div>
