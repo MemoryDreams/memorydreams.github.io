@@ -123,7 +123,7 @@ function showTab(num){
     switch(num){
         case 0:
             document.getElementById("descbutt").className="active";
-            document.getElementById("desc").className="";
+            document.getElementById("description").className="";
             break;
         case 1:
             document.getElementById("commentbutt").className="active";
@@ -146,7 +146,7 @@ function hideTabs(){
     document.getElementById("screenbutt").className="inactive";
     document.getElementById("downbutt").className="inactive";
 
-    document.getElementById("desc").className="hide";
+    document.getElementById("description").className="hide";
     document.getElementById("comment").className="hide";
     document.getElementById("screenshots").className="hide";
     document.getElementById("download").className="hide";
@@ -160,6 +160,30 @@ function showTile(obj){
     obj.className = obj.className.replace("hide", "flexandcenter");
 }
 
+function SetPage(title) {
+    let x, i;
+    x = document.getElementsByClassName('article');
+    for (i = 0; i < x.length; i++) {
+        hideTile(x[i]);
+    }
+    document.getElementById("goback").className="";
+    document.getElementById("return").className="hide";
+    document.getElementById("ArtPage").className="";
+    document.getElementById(title).className="flexandcenter"
+    activeTitle=title;
+}
+
+function BackToArticles() {
+    document.getElementById(activeTitle).className="hide"
+    let x, i;
+    x = document.getElementsByClassName('article');
+    for (i = 0; i < x.length; i++) {
+        showTile(x[i]);
+    }
+    document.getElementById("ArtPage").className="hide";
+    document.getElementById("goback").className="hide";
+    document.getElementById("return").className="";
+}
 
 
 
