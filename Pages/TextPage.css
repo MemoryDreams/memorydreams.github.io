@@ -41,10 +41,6 @@
     gap:10px;
 }
 
-p {
-    font-family: 'Times New Roman', Times, serif;
-}
-
 #body {
     background-color: var(--background1);
     border-radius: 10px;
@@ -190,7 +186,6 @@ p {
     border:none;
     background-color: var(--foreground1);
     height:24px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     overflow: hidden;
     
 }
@@ -272,9 +267,9 @@ p {
 
 .arttitle {
     color:var(--background3);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight:bold;
+    overflow: hidden;
 }
 
 .artheader {
@@ -314,6 +309,7 @@ p {
     width: 180px;
     height: 180px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .coverart img {
@@ -325,8 +321,13 @@ p {
     max-width:90%;
 }
 
-#ArtPage div p {
+#ArtPage div p, #fullPage p {
     text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#fullPage button, .arttitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .inpagetitle {
