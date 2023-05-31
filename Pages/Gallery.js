@@ -153,11 +153,11 @@ function hideTabs(){
 }
 
 function hideTile(obj){
-    obj.className = obj.className.replace("tile flexandcenter", "tile hide");
+    obj.className = obj.className.replace("flexandcenter", "hide");
 }
 
 function showTile(obj){
-    obj.className = obj.className.replace("tile hide", "tile flexandcenter");
+    obj.className = obj.className.replace("hide", "flexandcenter");
 }
 
 
