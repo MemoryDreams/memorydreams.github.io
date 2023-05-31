@@ -34,6 +34,13 @@
     font-size: large;
 }
 
+#header div {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+
 p {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -50,6 +57,35 @@ p {
 #spaceship {
     height:80%;
     width: 60%;
+}
+
+#pagetabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:5px;
+    justify-self: flex-start;
+}
+
+.pagetab {
+    height:42px;
+    width:42px;
+    background-color: var(--background3);
+    border-radius: 10%;
+    border-right: 1px solid var(--foreground2);
+    border-top: 1px solid var(--foreground2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagetab:hover {
+    background-color: var(--foreground1);
+}
+
+.activepage {
+    background-color: var(--backgroundspecial);
+    border:none;
 }
 
 #Gallery {
