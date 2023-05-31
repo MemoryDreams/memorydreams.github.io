@@ -340,3 +340,9 @@ p {
       height: 90%;
   }
 }
+
+@media screen and (min-height:700px){
+    #spaceship {
+        width: 95%;
+    }
+}

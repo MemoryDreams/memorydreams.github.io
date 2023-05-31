@@ -46,10 +46,19 @@ p {
     height: 80px;
     background-color: var(--background3);
     display:flex;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 10px; 
+}
+
+.button p {
+    width:100%;
     text-align: center;
+    margin-left:-42px;
+}
+
+.button img {
+    padding: 0 5px;
 }
 
 a:hover {
@@ -88,6 +97,12 @@ a {
         height: 140px;
         width: 140px;
         padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .button p {
+        margin:0;
     }
 }
 
@@ -128,10 +143,8 @@ a {
 
 
 @media screen and (min-height:700px){
-    #setilite {
-        width: 32px;
-        height: 32px;
-        margin-right: -32px;
+    #spaceship {
+        width: 95%;
     }
 
     p {
@@ -143,6 +156,13 @@ a {
         width: 140px;
         padding: 10px;
         font-size:18px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button p {
+        margin:0;
     }
 }
 
