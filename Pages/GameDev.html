@@ -53,6 +53,12 @@
                                     <br> A simple Rock Paper Scissors game against AI opponent. 
                                 </p>
                             </div>
+                            <div id="CubeGamedesc" class="hide">
+                                <img class="descim" src="../pics/PortfolioPreview/CubeGame/photo_5217643180646844804_y.jpg">
+                                <p>
+                                    <br> Super casual game for android phones. Help the cube reach the end of randomly generated maze by pushing the shield button when touching red zones. 
+                                </p>
+                            </div>
                             <div  id="MicroVaniadesc" class="hide">
                                 <p>MicroVania</p>
                                 <img class="descim" src="../pics/PortfolioPreview/BackgroundOfMeny.png">
@@ -73,6 +79,56 @@
                             </div>
                         </div>
                         <div id="comment" class="hide">
+                            <div id="CubeGamecomment" class="hide">
+                                <p>
+                                    This game started as a test task. I had clear goals: make a system that builds random maze and have a cube solve it, make red zones that will destroy the cube and shield button that will protect the cube, make transitions and UI. 
+                                </p>
+                                <p>
+                                    The hardest thing in that project was to develop maze generation. I've never done anything related to mazes or pathfinding algorithms, so it took me a while to figure out. 
+                                </p>
+                                <p>
+                                    At first I tried the random approach. I build a 2D grid and then fill it with walls and spaces. Chance of wall was dependant on a variable I could adjust, but this approach failed to make sufficient results. Instead of labyrinth, it looked like random cubes on a field. Besides, most of the times, mazes were unsolvable. Before I tried something else, however, I managed to make an algorythm that ensures there's a path from the starting position to the ending of the maze. 
+                                </p>
+                                <p>
+                                    The pathfinding system recursively searches the maze, marking all the tiles as either correct way or deadend. If search comes to a deadend, all the cells that lead to that point from the branching cell, a marked as deadends and the search goes on. If there are no empty cells left and the goal hasn't been reached, however, the maze is rebuild and the search is repeated. 
+                                </p>
+                                <p>
+                                    After some tinkering I managed to get solvable mazes consistently. But I still wasn't happy with how it looked. So I reworked the maze-building algorithm. 
+                                </p>
+                                <p>
+                                    Instead of having probability of having a wall on each cell, I made all the cells into walls, and curve paths afterwards. The new system randomly decides on directions procede from each cell and recursively goes until there's nowhere left to go. This method produced beautiful mazes with narrow corridors. 
+                                </p>
+                                <p>
+                                    Next I made red zones that will damage the cube if it is unprotected. I used similar method I tried with maze generation initially. We look at each empty cell and with some chance make a red zone there. I could only spawn them only on the path to the end, but it looked better when they are all over the maze. 
+                                </p>
+                                <p>
+                                    Having the cube move along the only correct path was a bit tricky, due to how physics engine works in Unity. I made a simple script that gives the cube a direction to move towards and then checks if its position is the same at the goal's. If it is, the goal it moved to the next cell. 
+                                </p>
+                                <p>
+                                    The problem was the cube got stuck on the second cell. It just never got perfectly aligned with cell position. To fix it, I reworked the script to detect if the cube is 0.01 units close to the goal. It worked sometimes, but still caused the cube to get stuck. 
+                                </p>
+                                <p>
+                                    Somehow it triggered the move-goal-to-next-cell script twice while the cube was aligned with the goal. I fixed it but only checking if the cube reached its destination if it wasn't reached already. And if it was, the cube would just move. 
+                                </p>
+                                <p>
+                                    All the other systems were straightforward to make. I made a little animation of cube dropping in pieces when it hits the red zone and a confetti using particle systems. For some reason I couldn't make particles of random color, so I attached three particle systems each with different color. 
+                                </p>
+                                <p>
+                                    It was time to make onscreen controls. Before that point, I tested the game inside the Unity Editor, using keyboard. And when adapting the controls to sensor, I faced a problem. How do you check when the button is not pressed?
+                                </p>
+                                <p>
+                                    In my game, you can only hold the shield button for two seconds. After that you have to release it to restore the shield gauge. With keyboard I used a simple if-else statement. If key is pressed, it's pressed, else, it is not pressed. But with onscreen buttons you can only trigger functions, not if-else statements. 
+                                </p>
+                                <p>
+                                    To fix it, I found a script that checks the amount of touches on screen. If the amount is zero, you may refill the shield gauge, if more than one, execute the script. It works just the way I need it to. 
+                                </p>
+                                <p>
+                                    The only things left to do were to make pause button and some simple UI effects. Instead of changing the timescale to 0, to stop everything, I simply made a isPaused variable. Most update actions are executed if this variable is false. I decided to do it that way, because otherwise the darkening screen effect won't be executed properly. 
+                                </p>
+                                <p>
+                                    With that my game is finished. It's simple, but I learned a lot while making it. 
+                                </p>
+                            </div>
                             <div id="RockPaperScissorscomment" class="hide">
                                 <p>
                                     This was an excersise, suggested by the Odin Project. The JavaScript part of this project was straightforward to do. So this little project mostly shows off my pixel art and design skills. 
@@ -199,6 +255,12 @@
                                 <img src="../pics/PortfolioPreview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(7).jpg">
                                 <img src="../pics/PortfolioPreview/Microvania/bandicam 2023-05-30 17-44-47-173_Moment(8).jpg">
                             </div>
+                            <div id="CubeGamepics" class="hide">
+                                <img src="../pics/PortfolioPreview/CubeGame/photo_5217643180646844803_y.jpg">
+                                <img src="../pics/PortfolioPreview/CubeGame/photo_5217643180646844804_y.jpg">
+                                <img src="../pics/PortfolioPreview/CubeGame/photo_5217643180646844805_y.jpg">
+                                <img src="../pics/PortfolioPreview/CubeGame/photo_5217643180646844806_y.jpg">
+                            </div>
                         </div>
                         <div id="download"  class="hide">
                             <div id="RockPaperScissorsDown" class="hide">
@@ -216,24 +278,15 @@
                             <div id="MicroVaniaDown" class="hide">
                                 <p>You can download the latest release of the game on <a href="https://memorydreams.itch.io/microvania">itch.io</a>.</p>
                             </div>
+                            <div id="CubeGameDown" class="hide">
+                                <p>
+                                    Try out the app: <a href="https://github.com/MemoryDreams/CubeGame/releases/tag/Android">github.com/MemoryDreams/CubeGame/releases/tag/Android</a>. <br>
+                                    <br>Source code: <a href="https://github.com/MemoryDreams/CubeGame">github.com/MemoryDreams/CubeGame</a>.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div id="Gallery">
-                        <div class="tile flexandcenter">
-                            <p class="title">MicroVania</p>
-                            <div class="tilebody">
-                                <img src="../pics/PortfolioPreview/BackgroundOfMeny.png">
-                                <div class="tabs">
-                                    <button onclick="hideProjects('MicroVania',0)">Description</button>
-                                    <button onclick="hideProjects('MicroVania',1)">Post-Mortem</button>
-                                    <button onclick="hideProjects('MicroVania',2)">Screenshots</button>
-                                    <button onclick="hideProjects('MicroVania',3)">Links</button>
-                                </div>
-                            </div>
-                            <p class="tilefooter">
-                                C#, Unity
-                            </p>
-                        </div>
                         <div class="tile flexandcenter">
                             <p class="title">Sketchbook</p>
                             <div class="tilebody">
@@ -262,6 +315,36 @@
                             </div>
                             <p class="tilefooter">
                                 JavaScript, CSS, HTML
+                            </p>
+                        </div>
+                        <div class="tile flexandcenter">
+                            <p class="title">CubeGame</p>
+                            <div class="tilebody">
+                                <img src="../pics/PortfolioPreview/CubeGame-preview.png">
+                                <div class="tabs">
+                                    <button onclick="hideProjects('CubeGame',0)">Description</button>
+                                    <button onclick="hideProjects('CubeGame',1)">Post-Mortem</button>
+                                    <button onclick="hideProjects('CubeGame',2)">Screenshots</button>
+                                    <button onclick="hideProjects('CubeGame',3)">Links</button>
+                                </div>
+                            </div>
+                            <p class="tilefooter">
+                                Unity, C#, Android
+                            </p>
+                        </div>
+                        <div class="tile flexandcenter">
+                            <p class="title">MicroVania</p>
+                            <div class="tilebody">
+                                <img src="../pics/PortfolioPreview/BackgroundOfMeny.png">
+                                <div class="tabs">
+                                    <button onclick="hideProjects('MicroVania',0)">Description</button>
+                                    <button onclick="hideProjects('MicroVania',1)">Post-Mortem</button>
+                                    <button onclick="hideProjects('MicroVania',2)">Screenshots</button>
+                                    <button onclick="hideProjects('MicroVania',3)">Links</button>
+                                </div>
+                            </div>
+                            <p class="tilefooter">
+                                Unity, C#, Windows
                             </p>
                         </div>
                     </div>

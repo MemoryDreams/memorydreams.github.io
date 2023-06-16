@@ -240,6 +240,8 @@
 
 .tilebody img {
     max-width: 100%;
+    min-height: 80%;
+    overflow: hidden;
 }
 
 #description, #comment, #screenshots, #download {
